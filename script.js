@@ -66,7 +66,24 @@ function determineUpcase(){
   return upcaseChar;
 }
 
+// Function used for numbers for the password
+function determineNumbers(){
+  numberRange = prompt("Does your password include numbers? \nYes or No");
 
+  if (numberRange === null){
+    determineLength();
+  } else if (numberRange === "yes"){
+    numberRange = true;
+    return numberRange;
+  } else if (numberRange === "no"){
+    numberRange = false;
+    return numberRange;
+  } else {
+    alert("Pick Yes or No");
+    determineNumbers();
+  }
+  return numberRange;
+}
 
 
 

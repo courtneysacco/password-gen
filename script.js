@@ -26,10 +26,26 @@ function determineLength(){
     alert("You will be asked to used specific characters to create your password. Press 'Ok' when completed");
   }
   return passwordLength;
-
-
 }
 
+// Function used for lowcase letters for the password
+function determineLowcase(){
+  lowcaseChar = prompt("Does your password include lowercase letters? \nYes or No");
+
+  if (lowcaseChar === null){
+    determineLength();
+  } else if (lowcaseChar === "yes"){
+    lowcaseChar = true;
+    return lowcaseChar;
+  } else if (lowcaseChar === "no"){
+    lowcaseChar = false;
+    return lowcaseChar;
+  } else {
+    alert("Pick Yes or No");
+    determineLowcase();
+  }
+  return lowcaseChar;
+}
 
 
 

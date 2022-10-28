@@ -85,6 +85,24 @@ function determineNumbers(){
   return numberRange;
 }
 
+// Function used for special characters for the password
+function determineSpecial(){
+  specialChar = prompt("Does your password include special characters? \nYes or No");
+
+  if (specialChar === null){
+    determineLength();
+  } else if (specialChar === "yes"){
+    specialChar = true;
+    return specialChar;
+  } else if (specialChar === "no"){
+    specialChar = false;
+    return specialChar;
+  } else {
+    alert("Pick Yes or No");
+    determineSpecial();
+  }
+  return specialChar;
+}
 
 
 

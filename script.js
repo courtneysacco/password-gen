@@ -47,6 +47,26 @@ function determineLowcase(){
   return lowcaseChar;
 }
 
+// Function used for upcase letters for the password
+function determineUpcase(){
+  upcaseChar = prompt("Does your password include uppercase letters? \nYes or No");
+
+  if (upcaseChar === null){
+    determineLength();
+  } else if (upcaseChar === "yes"){
+    upcaseChar = true;
+    return upcaseChar;
+  } else if (upcaseChar === "no"){
+    upcaseChar = false;
+    return upcaseChar;
+  } else {
+    alert("Pick Yes or No");
+    determineUpcase();
+  }
+  return upcaseChar;
+}
+
+
 
 
 

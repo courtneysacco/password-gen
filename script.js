@@ -9,6 +9,37 @@ var special = "!@#$%^&*()-_=+[]{}|/';:?.,<>`~";
 // var numberRange;
 // var specialChar;
 
+// Function used to determine length of password
+function determineLength(){
+  passwordLength = prompt("Determine how many characters you want in your password - Between 8-128 characters");
+
+  if (passwordLength<8){
+    alert("Password length must be a number between 8-128 characters.");
+    determineLength();
+  } else if (passwordLength>128){
+    alert("Password length must be a number between 8-128 characters.");
+    determineLength();
+  } else if (isNaN(passwordLength)){
+    alert("Password length must be a number between 8-128 characters");
+    determineLength();
+  } else {
+    alert("You will be asked to used specific characters to create your password. Press 'Ok' when completed");
+  }
+  return passwordLength;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // Write password to the #password input
 function writePassword() {

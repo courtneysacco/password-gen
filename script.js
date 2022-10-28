@@ -8,6 +8,7 @@ var special = "!@#$%^&*()-_=+[]{}|/';:?.,<>`~";
 // var upcaseChar;
 // var numberRange;
 // var specialChar;
+// var password; (password output)
 
 // Function used to determine length of password
 function determineLength(){
@@ -104,6 +105,70 @@ function determineSpecial(){
   return specialChar;
 }
 
+// Function used to take all the data from functions and create a password off the answers
+function generatePassword(){
+  determineLength();
+  determineLowcase();
+  determineUpcase();
+  determineNumbers();
+  determineSpecial();
+
+  var output = "";
+  password = "";
+
+  if (lowcaseChar && upcaseChar && numberRange && specialChar){
+    output += lowcase + upcase + number + special;
+
+  } else if (lowcaseChar && upcaseChar && numberRange){
+    out += lowcase + upcase + number;
+
+  } else if (lowcaseChar && specialChar && numberRange){
+    output += lowcase + special + number;
+
+  } else if (upcaseChar && specialChar && numberRange){
+    output += upcase + special + number;
+
+  } else if (lowcaseChar && upcaseChar){
+    output += lowcase + upcase;
+
+  } else if (lowcaseChar && numberRange){
+    output += lowcase + number;
+
+  } else if (lowcaseChar && specialChar){
+    output += lowcase + special;
+
+  } else if (upcaseChar && numberRange){
+    output += upcase + number;
+
+  } else if (upcaseChar && specialChar){
+    output += upcase + special;
+
+  } else if (numberRange && specialChar){
+    output += number + special;
+
+  } else if (lowcaseChar){
+    output += lowcase;
+
+  } else if (upcaseChar){
+    output += upcase;
+
+  } else if (numberRange){
+    output += number;
+
+  } else if (specialChar){
+    output += special;
+
+  } else {
+    output === null;
+    alert ("Say 'Yes' to one to make password");
+    determineLength();
+  }
+  // charAt function used to create password
+  for(var i= 0; i < passwordLength; i++){
+    password += output.charAt(Math.floor(Math.random() * output.length))
+  }
+  return password;
+}
 
 
 

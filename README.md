@@ -30,7 +30,7 @@ THEN the password is either displayed in an alert or written to the page
 
 # Screenshots 
 ![](images/pass-gen-before.png)
-![](images/pass-gen-after.png) 
+![](images/pass-gen-aft.png) 
 
 # Links
 <a href="https://courtneysacco.github.io/password-gen/"
